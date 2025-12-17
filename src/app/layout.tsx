@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Vazirmatn } from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
@@ -10,7 +10,25 @@ const vazirmatn = Vazirmatn({
 })
 
 export const metadata: Metadata = {
-  title: 'Hossein Tavangar - Frontend Developer'
+  title: 'Hossein Tavangar - Frontend Developer',
+  description: 'Frontend Developer',
+  keywords: [
+    'Fronted',
+    'Development',
+    'Vue',
+    'Vue.js',
+    'Nuxt',
+    'Nuxt.js',
+    'React',
+    'React.js',
+    'Next',
+    'Next.js'
+  ]
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: '#548e75'
 }
 
 export default function RootLayout({

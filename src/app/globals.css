@@ -2,9 +2,11 @@
 @import 'tw-animate-css';
 
 :root {
-  --on-foreground: #f3fbf7;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
+  --background: #0e0904;
+  --background-alpha: #1b1207;
+  --on-background: #ebddcc;
+  --foreground: #548e75;
+  --on-foreground: #e6f6ef;
 }
 
 @theme inline {

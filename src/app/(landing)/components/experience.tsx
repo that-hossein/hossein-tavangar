@@ -13,6 +13,16 @@ interface ExperienceItem extends ExperienceItemProps {
 const experience: ExperienceItem[] = [
   {
     id: 1,
+    company: 'Smart Trust for the Future',
+    logo: '/smart-trust-logo.png',
+    position: 'Frontend Consultant',
+    start: new Date('2025 May'),
+    isPartTime: true,
+    description:
+      'As a Frontend Consultant, I owned the architecture and technical direction of frontend solutions for secure document processing systems. I designed and implemented low-level PDF manipulation workflows, working directly with PDF internals, attributes, and signature containers. I defined and enforced frontend architecture standards for integrating PDF digital signature specifications, including PKCS#7 signing flows and X.509 certificate handling with PEM-encoded elements. In this role, I provided technical leadership on security-critical implementations, guided engineering decisions across teams, reviewed and validated complex code paths, and ensured scalability, maintainability, and strict compliance with digital signature and trust standards.'
+  },
+  {
+    id: 2,
     company: 'MTYN Ltd.',
     logo: '/mtyn-logo.png',
     position: 'Frontend Team Lead',
@@ -21,7 +31,7 @@ const experience: ExperienceItem[] = [
       'As Frontend Team Lead on the Baarbaanet project, I spearheaded the evolution of six core applications—including customer, driver, and curator web apps alongside shipper, carrier, and back‑office panels—while managing the frontend team, conducting regular code reviews, and enforcing best practices for clean, maintainable code. I managed all six applications within an Nx‑powered monorepo to share code, enforce consistency, and accelerate development. I designed and built a reusable UI‑kit based on UI/UX guidelines to ensure a cohesive look and feel across every app. I implemented and integrated essential libraries for form handling, user authentication, authorization, and API services to optimize performance and future‑proof our codebase. By leveraging Capacitor, I enabled the generation of Android APKs for rapid distribution of installable mobile applications. In close collaboration with product, design, and backend teams, I enhanced the user experience, streamlined workflows, and delivered high‑quality, scalable solutions that supported seamless delivery and logistics operations.'
   },
   {
-    id: 2,
+    id: 3,
     company: 'MTYN Ltd.',
     logo: '/mtyn-logo.png',
     position: 'Frontend Developer',
@@ -31,7 +41,7 @@ const experience: ExperienceItem[] = [
       'As a Frontend Developer, I worked on enhancing the Baarbaanet platform, focusing on creating responsive and intuitive user interfaces for the web application, driver panel, courier panel, and admin panel. I collaborated closely with the backend team to ensure seamless integration and optimized performance, while also ensuring pixel-perfect designs. My contributions helped improve the overall user experience and streamline workflows, delivering high-quality solutions in a fast-paced development environment.'
   },
   {
-    id: 3,
+    id: 4,
     company: 'Self Employed',
     logo: '/freelance-logo.png',
     position: 'Full‑Stack Web Developer',
@@ -41,7 +51,7 @@ const experience: ExperienceItem[] = [
       'As a Freelance Full‑Stack Web Developer, I delivered end‑to‑end project implementations by leveraging PHP, Node.js, and Nest.js on the server side, paired with Vue.js or jQuery to craft responsive, interactive front‑end interfaces. I owned the entire development lifecycle—from requirements gathering and architecture design through coding, testing, and deployment—ensuring clean, maintainable code and on‑time delivery. Collaborating directly with clients, I translated business needs into tailored technical solutions, integrated third‑party APIs, and optimized performance to exceed expectations on every engagement.'
   },
   {
-    id: 4,
+    id: 5,
     company: 'XSyntax',
     logo: '/xsyntax-logo.png',
     position: 'Frontend / Android Developer',

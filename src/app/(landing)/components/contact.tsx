@@ -83,7 +83,7 @@ export function Contact() {
             </Magnetic>
           </div>
 
-          <div className='col-span-full text-on-background text-center text-sm'>
+          {/* <div className='col-span-full text-on-background text-center text-sm'>
             <span className='inline-flex gap-1'>
               Or Let&apos;s say
               <a
@@ -93,7 +93,7 @@ export function Contact() {
                 <ExternalLink size={16} />
               </a>
             </span>
-          </div>
+          </div> */}
         </div>
       </DefaultInView>
     </section>
