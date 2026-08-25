@@ -21,35 +21,30 @@ export function AboutMe() {
         />
       </DefaultInView>
 
-      <div className='text-on-background text-pretty text-center text-lg md:max-w-3/4 lg:max-w-2/3'>
+      <div className='text-on-background text-pretty text-center text-lg md:max-w-3/4 lg:max-w-2/3 xl:max-w-2/4 2xl:max-w-1/3'>
         <DefaultInView once>
           <p className='mb-3'>
-            As a passionate frontend developer, I specialize in Vue.js, Nuxt.js,
-            and crafting responsive, scalable web solutions. I am dedicated to
-            crafting seamless user experiences and collaborating with
-            cross-functional teams to address complex challenges in web
-            development. With a growing expertise in TypeScript, I am committed
-            to writing clean, maintainable code. Currently, I am expanding my
-            knowledge in React and Angular, aiming to enhance my versatility and
-            stay ahead of evolving web technologies.
+            Senior Frontend Developer with 7+ years of experience building
+            responsive, scalable web applications using Vue.js, Nuxt.js, and
+            TypeScript. I focus on crafting seamless user experiences, mentoring
+            engineers, and collaborating with cross-functional teams to solve
+            complex problems in web development.
           </p>
         </DefaultInView>
 
         <DefaultInView once>
           <p className='mb-3'>
-            I enjoy working collaboratively, mentoring developers, and focusing
-            on delivering high-quality, pixel-perfect applications. My goal is
-            to continue developing innovative, performance-driven solutions
-            while exploring new opportunities in the ever-changing tech
-            landscape.
+            I care about clean, maintainable code and pixel-perfect execution.
+            Currently expanding into React to broaden my stack and stay ahead of
+            where the industry is heading.
           </p>
         </DefaultInView>
 
         <DefaultInView once>
           <p>
-            In addition, I have a well-rounded skill set with experience in
-            backend development using PHP, Node.js, NestJS, and Android
-            development.
+            Beyond frontend, I have hands-on backend experience with PHP,
+            Node.js, and NestJS, plus some Android development — gives me a
+            fuller picture when working across a stack.
           </p>
         </DefaultInView>
       </div>
