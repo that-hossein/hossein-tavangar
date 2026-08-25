@@ -1,3 +1,4 @@
+import { getDuration } from '@/lib/get-duration'
 import { ChevronRightIcon } from 'lucide-react'
 import {
   MorphingDialog,
@@ -19,32 +20,6 @@ export interface ExperienceItemProps {
   end?: Date
   isPartTime?: boolean
   description: string
-}
-
-function getDuration(start: Date, end: Date = new Date()) {
-  const startYear = start.getFullYear()
-  const startMonth = start.getMonth()
-
-  const endYear = end.getFullYear()
-  const endMonth = end.getMonth()
-
-  let totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1 // 👈 LinkedIn counts the start month
-
-  if (totalMonths < 0) totalMonths = 0
-
-  const years = Math.floor(totalMonths / 12)
-  const months = totalMonths % 12
-
-  const result = []
-  if (years) {
-    result.push(`${years} ${years > 1 ? 'yrs' : 'yr'}`)
-  }
-
-  if (months) {
-    result.push(`${months} ${months > 1 ? 'mos' : 'mo'}`)
-  }
-
-  return result.join(' ')
 }
 
 export function ExperienceItem(props: ExperienceItemProps) {
