@@ -1,5 +1,6 @@
 export interface ExperienceEntry {
   company: string
+  logo: string
   position: string
   start: Date
   end?: Date
@@ -58,6 +59,7 @@ export const skills = [
 export const experience: ExperienceEntry[] = [
   {
     company: 'Argoman',
+    logo: '/argoman-logo.png',
     position: 'Senior Frontend Developer',
     start: new Date('2026 Feb'),
     description:
@@ -65,6 +67,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'Smart Trust for the Future',
+    logo: '/smart-trust-logo.png',
     position: 'Frontend Consultant',
     start: new Date('2025 May'),
     isPartTime: true,
@@ -73,6 +76,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'MTYN Ltd.',
+    logo: '/mtyn-logo.png',
     position: 'Frontend Team Lead',
     start: new Date('2023 Jan'),
     end: new Date('2026 Feb'),
@@ -81,6 +85,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'MTYN Ltd.',
+    logo: '/mtyn-logo.png',
     position: 'Frontend Developer',
     start: new Date('2021 Jun'),
     end: new Date('2023 Jan'),
@@ -89,6 +94,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'Self Employed',
+    logo: '/freelance-logo.png',
     position: 'Full‑Stack Web Developer',
     start: new Date('2020 Feb'),
     end: new Date('2021 June'),
@@ -97,6 +103,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'XSyntax',
+    logo: '/xsyntax-logo.png',
     position: 'Frontend / Android Developer',
     start: new Date('2015 Sep'),
     end: new Date('2020 Feb'),
