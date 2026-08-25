@@ -11,13 +11,7 @@ import {
   PhoneIcon
 } from 'lucide-react'
 import { DefaultInView } from '@/components/default-in-view'
-
-const subtitles = [
-  'Frontend developer for Vue.js',
-  'Frontend developer for Nuxt.js',
-  'Frontend developer for React.js',
-  'Frontend developer for Next.js'
-]
+import { name, subtitles } from '@/data/resume'
 
 export default function HeroSection() {
   const [subtitle, setSubtitle] = useState<string | null>(null)
@@ -70,7 +64,7 @@ export default function HeroSection() {
             delay={0.5}
             className='text-4xl md:text-7xl font-semibold text-on-background'
             onAnimationComplete={handleShowSubtitle}>
-            Hossein Tavangar
+            {name}
           </TextEffect>
         </DefaultInView>
 

@@ -7,15 +7,35 @@ export interface ExperienceEntry {
   description: string
 }
 
+export const name = 'Hossein Tavangar'
+
+export const profileImage = '/profile.jpg'
+
+export const themeColor = '#548e75'
+
 export const contact = {
   location: 'Tehran',
   phone: '+989134312831',
   email: 'androsein1@gmail.com',
   linkedin: 'linkedin.com/in/tavangar',
+  telegram: 'that_hossein',
   website: 'hossein.info'
 }
 
 export const title = 'Senior Frontend Developer'
+
+export const subtitles = [
+  'Frontend developer for Vue.js',
+  'Frontend developer for Nuxt.js',
+  'Frontend developer for React.js',
+  'Frontend developer for Next.js'
+]
+
+export const about = [
+  'Senior Frontend Developer with 7+ years of experience building responsive, scalable web applications using Vue.js, Nuxt.js, and TypeScript. I focus on crafting seamless user experiences, mentoring engineers, and collaborating with cross-functional teams to solve complex problems in web development.',
+  'I care about clean, maintainable code and pixel-perfect execution. Currently expanding into React to broaden my stack and stay ahead of where the industry is heading.',
+  'Beyond frontend, I have hands-on backend experience with PHP, Node.js, and NestJS, plus some Android development — gives me a fuller picture when working across a stack.'
+]
 
 export const summary =
   'Senior Frontend Developer with 7+ years of professional experience building responsive, scalable web applications using Vue.js, Nuxt.js and TypeScript. Proven ability to collaborate with cross-functional teams, mentor junior engineers, and deliver pixel-perfect user interfaces. Actively expanding expertise in React to broaden technology stack and future-proof solutions.'

@@ -13,8 +13,10 @@ import {
   education,
   experience,
   languages,
+  name,
   skills,
   summary,
+  themeColor,
   title
 } from '@/data/resume'
 
@@ -32,7 +34,6 @@ Font.register({
   fonts: [{ src: '/fonts/Poppins-Bold.woff', fontWeight: 'bold' }]
 })
 
-const green = '#548e75'
 const dark = '#333333'
 const bullet = '•'
 
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30
   },
   header: {
-    backgroundColor: green,
+    backgroundColor: themeColor,
     color: '#ffffff',
     paddingHorizontal: 32,
     paddingTop: 20,
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 15,
     fontWeight: 'bold',
-    color: green,
+    color: themeColor,
     marginBottom: 8,
     marginTop: 14
   },
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     paddingRight: 8
   },
   bullet: {
-    color: green,
+    color: themeColor,
     marginRight: 6
   },
   experienceItem: {
@@ -165,10 +166,10 @@ function getDuration(start: Date, end: Date = new Date()) {
 
 export function ResumeDocument() {
   return (
-    <Document title='Hossein Tavangar CV' author='Hossein Tavangar'>
+    <Document title={`${name} CV`} author={name}>
       <Page size='A4' style={styles.page}>
         <View style={styles.header}>
-          <Text style={styles.name}>Hossein Tavangar</Text>
+          <Text style={styles.name}>{name}</Text>
           <Text style={styles.title}>{title}</Text>
           <View style={styles.contactLine}>
             <Text>{contact.location}</Text>
@@ -261,7 +262,7 @@ export async function generateResumePdf() {
 
   const link = document.createElement('a')
   link.href = url
-  link.download = 'Hossein Tavangar CV.pdf'
+  link.download = `${name} CV.pdf`
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
