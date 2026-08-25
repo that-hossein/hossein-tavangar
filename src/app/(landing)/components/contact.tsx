@@ -14,7 +14,7 @@ export function Contact() {
       </DefaultInView>
 
       <DefaultInView className='w-full' once margin={20}>
-        <div className='w-full md:max-w-3/4 lg:max-w-2/3 grid grid-cols-2 gap-4 mx-auto'>
+        <div className='w-full md:max-w-3/4 lg:max-w-2/3 xl:max-w-2/4 2xl:max-w-1/3 grid grid-cols-2 gap-4 mx-auto'>
           <Magnetic
             intensity={0.2}
             springOptions={{ bounce: 0.1 }}

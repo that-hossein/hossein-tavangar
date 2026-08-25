@@ -101,7 +101,7 @@ export function ExperienceItem(props: ExperienceItemProps) {
       </MorphingDialogTrigger>
 
       <MorphingDialogContainer>
-        <MorphingDialogContent className='relative max-h-[85%] overflow-auto w-[90%] md:w-[500px] border border-on-background/50 rounded-lg bg-background text-on-background'>
+        <MorphingDialogContent className='relative max-h-[85%] overflow-auto w-[90%]  md:w-3/4 lg:w-2/3 xl:w-2/4 2xl:w-1/3 border border-on-background/50 rounded-lg bg-background text-on-background'>
           <div className='relative flex flex-col gap-2 grow'>
             <MorphingDialogImage
               src={props.logo}
