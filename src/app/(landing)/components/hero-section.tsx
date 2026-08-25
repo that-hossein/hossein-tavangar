@@ -107,7 +107,7 @@ export default function HeroSection() {
           </div>
         </DefaultInView>
 
-        <a href='#about-me'>
+        <a href='#about-me' aria-label='Scroll to About Me section'>
           <ChevronsDownIcon
             className={clsx(
               'transition-opacity duration-1000 absolute bottom-4 animate-bounce text-on-background/30 cursor-pointer',

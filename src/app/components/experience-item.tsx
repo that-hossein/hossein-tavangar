@@ -63,7 +63,7 @@ export function ExperienceItem(props: ExperienceItemProps) {
               />
 
               <MorphingDialogSubtitle className='flex flex-col gap-1 text-start'>
-                <h5 className='text-lg font-semibold'>{props.company}</h5>
+                <h3 className='text-lg font-semibold'>{props.company}</h3>
                 <span className='opacity-75 text-sm'>
                   {startDate} - {endDate} · {duration}
                 </span>
@@ -94,7 +94,7 @@ export function ExperienceItem(props: ExperienceItemProps) {
 
               <div className='flex items-center gap-4'>
                 <MorphingDialogSubtitle className='flex flex-col gap-1 text-start'>
-                  <h5 className='font-semibold text-xl'>{props.company}</h5>
+                  <h3 className='font-semibold text-xl'>{props.company}</h3>
                   <span className='opacity-75 text-sm'>
                     {startDate} - {endDate} · {duration}
                   </span>
