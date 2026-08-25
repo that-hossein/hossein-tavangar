@@ -4,7 +4,12 @@ import { TextEffect } from '@/components/motion-primitives/text-effect'
 import { TextMorph } from '@/components/motion-primitives/text-morph'
 import clsx from 'clsx'
 import { Button } from '@/components/button'
-import { ChevronsDownIcon, DownloadIcon, PhoneIcon } from 'lucide-react'
+import {
+  ChevronsDownIcon,
+  DownloadIcon,
+  Loader2Icon,
+  PhoneIcon
+} from 'lucide-react'
 import { DefaultInView } from '@/components/default-in-view'
 
 const subtitles = [
@@ -16,9 +21,22 @@ const subtitles = [
 
 export default function HeroSection() {
   const [subtitle, setSubtitle] = useState<string | null>(null)
+  const [isGeneratingCv, setIsGeneratingCv] = useState(false)
 
   const handleShowSubtitle = () => {
     setSubtitle(subtitles[0])
+  }
+
+  const handleGetCv = async () => {
+    if (isGeneratingCv) return
+
+    setIsGeneratingCv(true)
+    try {
+      const { generateResumePdf } = await import('@/lib/generate-resume-pdf')
+      await generateResumePdf()
+    } finally {
+      setIsGeneratingCv(false)
+    }
   }
 
   useEffect(() => {
@@ -81,11 +99,16 @@ export default function HeroSection() {
             />
 
             <Button
-              text='Get CV'
+              text={isGeneratingCv ? 'Generating...' : 'Get CV'}
               variant='ghost'
-              start={<DownloadIcon size={16} />}
-              href='/resume.pdf'
-              download='Hossein Tavangar CV'
+              start={
+                isGeneratingCv ? (
+                  <Loader2Icon size={16} className='animate-spin' />
+                ) : (
+                  <DownloadIcon size={16} />
+                )
+              }
+              onClick={handleGetCv}
             />
           </div>
         </DefaultInView>
