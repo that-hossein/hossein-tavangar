@@ -8,7 +8,7 @@ const PDFViewer = dynamic(
   { ssr: false }
 )
 
-export default function ResumePreviewPage() {
+export default function CvPage() {
   return (
     <PDFViewer style={{ width: '100vw', height: '100vh', border: 'none' }}>
       <ResumeDocument />

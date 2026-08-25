@@ -19,6 +19,7 @@ import {
   themeColor,
   title
 } from '@/data/resume'
+import { getDuration } from '@/lib/get-duration'
 
 Font.register({
   family: 'Arimo',
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: themeColor,
     color: '#ffffff',
-    paddingHorizontal: 32,
+    paddingHorizontal: 28,
     paddingTop: 20,
     paddingBottom: 15,
     marginTop: -30
@@ -74,10 +75,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 'bold',
     marginTop: 7,
-    lineHeight: 1.15
+    lineHeight: 1.5
   },
   body: {
-    paddingHorizontal: 32
+    paddingHorizontal: 28
   },
   sectionTitle: {
     fontSize: 15,
@@ -110,6 +111,7 @@ const styles = StyleSheet.create({
   companyRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    opacity: 0.7,
     marginBottom: 3
   },
   company: {
@@ -139,6 +141,20 @@ const styles = StyleSheet.create({
   languageItem: {
     flexDirection: 'row',
     marginBottom: 6
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 12,
+    left: 28,
+    right: 28,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    fontSize: 8,
+    color: dark
+  },
+  footerLink: {
+    color: themeColor,
+    textDecoration: 'none'
   }
 })
 
@@ -148,23 +164,12 @@ function formatDate(date: Date) {
   )} ${new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date)}`
 }
 
-function getDuration(start: Date, end: Date = new Date()) {
-  const totalMonths =
-    (end.getFullYear() - start.getFullYear()) * 12 +
-    (end.getMonth() - start.getMonth()) +
-    1
-
-  const years = Math.floor(totalMonths / 12)
-  const months = totalMonths % 12
-
-  const parts = []
-  if (years) parts.push(`${years} ${years > 1 ? 'yrs' : 'yr'}`)
-  if (months) parts.push(`${months} ${months > 1 ? 'mos' : 'mo'}`)
-
-  return parts.join(' ')
-}
-
 export function ResumeDocument() {
+  const downloadedAt = new Intl.DateTimeFormat('en', {
+    dateStyle: 'medium',
+    timeStyle: 'short'
+  }).format(new Date())
+
   return (
     <Document title={`${name} CV`} author={name}>
       <Page size='A4' style={styles.page}>
@@ -208,23 +213,25 @@ export function ResumeDocument() {
             ))}
           </View>
 
-          <Text style={styles.sectionTitle}>Work Experience</Text>
+          <Text style={styles.sectionTitle}>Experience</Text>
           {experience.map((item) => (
             <View
               key={`${item.company}-${item.position}`}
               style={styles.experienceItem}
               wrap={false}>
-              <Text style={styles.position}>
-                {item.position}
-                {item.isPartTime ? ' (Part-time)' : ''}
-              </Text>
-              <View style={styles.companyRow}>
-                <Text style={styles.company}>{item.company}</Text>
-                <Text style={styles.period}>
-                  {formatDate(item.start)} -{' '}
-                  {item.end ? formatDate(item.end) : 'Present'} (
-                  {getDuration(item.start, item.end)})
-                </Text>
+              <View>
+                <Text style={styles.position}>{item.position}</Text>
+                <View style={styles.companyRow}>
+                  <Text style={styles.company}>
+                    {item.company} {'·'}{' '}
+                    {item.isPartTime ? 'Part-time' : 'Full-time'}
+                  </Text>
+                  <Text style={styles.period}>
+                    {formatDate(item.start)} -{' '}
+                    {item.end ? formatDate(item.end) : 'Present'} (
+                    {getDuration(item.start, item.end)})
+                  </Text>
+                </View>
               </View>
               <Text style={styles.description}>{item.description}</Text>
             </View>
@@ -251,13 +258,34 @@ export function ResumeDocument() {
             </View>
           ))}
         </View>
+
+        <View style={styles.footer} fixed>
+          <Text>
+            Downloaded {downloadedAt} · Latest version:{' '}
+            <Link
+              style={styles.footerLink}
+              href={`https://${contact.website}/cv`}>
+              {contact.website}/cv
+            </Link>
+          </Text>
+
+          <Text
+            render={({ pageNumber, totalPages }) =>
+              `${pageNumber} of ${totalPages}`
+            }
+          />
+        </View>
       </Page>
     </Document>
   )
 }
 
+export function getResumePdfBlob() {
+  return pdf(<ResumeDocument />).toBlob()
+}
+
 export async function generateResumePdf() {
-  const blob = await pdf(<ResumeDocument />).toBlob()
+  const blob = await getResumePdfBlob()
   const url = URL.createObjectURL(blob)
 
   const link = document.createElement('a')
