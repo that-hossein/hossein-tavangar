@@ -2,6 +2,7 @@ import { Button } from '@/components/button'
 import { DefaultInView } from '@/components/default-in-view'
 import { Magnetic } from '@/components/motion-primitives/magnetic'
 import { SectionTitle } from '@/components/section-title'
+import { contact } from '@/data/resume'
 import { ExternalLink } from 'lucide-react'
 
 export function Contact() {
@@ -14,7 +15,7 @@ export function Contact() {
       </DefaultInView>
 
       <DefaultInView className='w-full' once margin={20}>
-        <div className='w-full md:max-w-3/4 lg:max-w-2/3 grid grid-cols-2 gap-4 mx-auto'>
+        <div className='w-full md:max-w-3/4 lg:max-w-2/3 xl:max-w-2/4 2xl:max-w-1/3 grid grid-cols-2 gap-4 mx-auto'>
           <Magnetic
             intensity={0.2}
             springOptions={{ bounce: 0.1 }}
@@ -22,7 +23,7 @@ export function Contact() {
             range={200}>
             <Button
               className='justify-center w-full'
-              href='https://www.linkedin.com/in/tavangar'
+              href={`https://www.${contact.linkedin}`}
               target='_blank'>
               <Magnetic
                 intensity={0.1}
@@ -44,7 +45,7 @@ export function Contact() {
             range={200}>
             <Button
               className='justify-center w-full'
-              href='https://t.me/that_hossein'
+              href={`https://t.me/${contact.telegram}`}
               target='_blank'>
               <Magnetic
                 intensity={0.1}
@@ -67,7 +68,7 @@ export function Contact() {
               range={200}>
               <Button
                 className='justify-center w-full'
-                href='mailto:androsein1@gmail.com'
+                href={`mailto:${contact.email}`}
                 target='_blank'>
                 <Magnetic
                   intensity={0.1}

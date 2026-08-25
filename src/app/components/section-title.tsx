@@ -15,7 +15,7 @@ export function SectionTitle(props: SectionTitleProps) {
       <h2 className='text-3xl md:text-5xl font-semibold text-on-background'>
         {props.title}
       </h2>
-      <span className='text-4xl md:text-6xl font-extrabold font-stretch-expanded text-on-background/3 absolute scale-y-150'>
+      <span className='text-4xl md:text-6xl font-extrabold font-stretch-expanded text-on-background/3 absolute scale-y-150 select-none'>
         {props.title}
       </span>
     </div>

@@ -1,3 +1,4 @@
+import { getDuration } from '@/lib/get-duration'
 import { ChevronRightIcon } from 'lucide-react'
 import {
   MorphingDialog,
@@ -19,32 +20,6 @@ export interface ExperienceItemProps {
   end?: Date
   isPartTime?: boolean
   description: string
-}
-
-function getDuration(start: Date, end: Date = new Date()) {
-  const startYear = start.getFullYear()
-  const startMonth = start.getMonth()
-
-  const endYear = end.getFullYear()
-  const endMonth = end.getMonth()
-
-  let totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1 // 👈 LinkedIn counts the start month
-
-  if (totalMonths < 0) totalMonths = 0
-
-  const years = Math.floor(totalMonths / 12)
-  const months = totalMonths % 12
-
-  const result = []
-  if (years) {
-    result.push(`${years} ${years > 1 ? 'yrs' : 'yr'}`)
-  }
-
-  if (months) {
-    result.push(`${months} ${months > 1 ? 'mos' : 'mo'}`)
-  }
-
-  return result.join(' ')
 }
 
 export function ExperienceItem(props: ExperienceItemProps) {
@@ -88,7 +63,7 @@ export function ExperienceItem(props: ExperienceItemProps) {
               />
 
               <MorphingDialogSubtitle className='flex flex-col gap-1 text-start'>
-                <h5 className='text-lg font-semibold'>{props.company}</h5>
+                <h3 className='text-lg font-semibold'>{props.company}</h3>
                 <span className='opacity-75 text-sm'>
                   {startDate} - {endDate} · {duration}
                 </span>
@@ -101,7 +76,7 @@ export function ExperienceItem(props: ExperienceItemProps) {
       </MorphingDialogTrigger>
 
       <MorphingDialogContainer>
-        <MorphingDialogContent className='relative max-h-[85%] overflow-auto w-[90%] md:w-[500px] border border-on-background/50 rounded-lg bg-background text-on-background'>
+        <MorphingDialogContent className='relative max-h-[85%] overflow-auto w-[90%]  md:w-3/4 lg:w-2/3 xl:w-2/4 2xl:w-1/3 border border-on-background/50 rounded-lg bg-background text-on-background'>
           <div className='relative flex flex-col gap-2 grow'>
             <MorphingDialogImage
               src={props.logo}
@@ -119,7 +94,7 @@ export function ExperienceItem(props: ExperienceItemProps) {
 
               <div className='flex items-center gap-4'>
                 <MorphingDialogSubtitle className='flex flex-col gap-1 text-start'>
-                  <h5 className='font-semibold text-xl'>{props.company}</h5>
+                  <h3 className='font-semibold text-xl'>{props.company}</h3>
                   <span className='opacity-75 text-sm'>
                     {startDate} - {endDate} · {duration}
                   </span>

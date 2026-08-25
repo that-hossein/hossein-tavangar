@@ -3,6 +3,7 @@ import { Vazirmatn } from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
 import { GoToTop } from './components/go-to-top'
+import { name, themeColor, title } from '@/data/resume'
 
 const vazirmatn = Vazirmatn({
   variable: '--font-vazirmatn',
@@ -10,8 +11,8 @@ const vazirmatn = Vazirmatn({
 })
 
 export const metadata: Metadata = {
-  title: 'Hossein Tavangar - Frontend Developer',
-  description: 'Frontend Developer',
+  title: `${name} - ${title}`,
+  description: title,
   keywords: [
     'Fronted',
     'Development',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#548e75'
+  themeColor
 }
 
 export default function RootLayout({

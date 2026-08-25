@@ -1,0 +1,27 @@
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
+minimumReleaseAgeExclude:
+  - '@react-pdf/font@4.0.11'
+  - '@react-pdf/image@3.1.2'
+  - '@react-pdf/layout@5.0.0'
+  - '@react-pdf/paginate@1.0.0'
+  - '@react-pdf/primitives@4.4.0'
+  - '@react-pdf/render@4.6.2'
+  - '@react-pdf/renderer@4.7.0'
+  - '@react-pdf/stylesheet@6.2.4'
+  - '@react-pdf/svg@1.1.1'
+  - '@react-pdf/textkit@6.4.2'
+  - '@react-pdf/types@2.12.0'
+  - '@next/env@16.3.3'
+  - '@next/eslint-plugin-next@16.3.3'
+  - '@next/swc-darwin-arm64@16.3.3'
+  - '@next/swc-darwin-x64@16.3.3'
+  - '@next/swc-linux-arm64-gnu@16.3.3'
+  - '@next/swc-linux-arm64-musl@16.3.3'
+  - '@next/swc-linux-x64-gnu@16.3.3'
+  - '@next/swc-linux-x64-musl@16.3.3'
+  - '@next/swc-win32-arm64-msvc@16.3.3'
+  - '@next/swc-win32-x64-msvc@16.3.3'
+  - eslint-config-next@16.3.3
+  - next@16.3.3

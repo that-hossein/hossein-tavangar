@@ -25,6 +25,7 @@ export function GoToTop() {
 
   return (
     <button
+      aria-label='Scroll to top'
       className={clsx(
         'fixed bg-background cursor-pointer hover:bg-foreground/30 text-on-background h-8 w-8 flex items-center justify-center rounded-full border border-on-background/20 right-4 z-50 transition-all',
         visible ? 'bottom-4' : '-bottom-10'
